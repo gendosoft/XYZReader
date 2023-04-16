@@ -18,32 +18,32 @@ import java.util.List;
  */
 public class ArticlesAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
 
-    private List<Article> mArticleList;
-    private ArticleItemsClickListener listener;
+  private List<Article> mArticleList;
+  private ArticleItemsClickListener listener;
 
-    public ArticlesAdapter(ArticleItemsClickListener listener) {
-        this.listener = listener;
-    }
+  public ArticlesAdapter(ArticleItemsClickListener listener) {
+    this.listener = listener;
+  }
 
-    @NotNull
-    @Override
-    public ArticleViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-        return ArticleViewHolder.create(parent, listener);
-    }
+  @NotNull
+  @Override
+  public ArticleViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    return ArticleViewHolder.create(parent, listener);
+  }
 
-    @Override
-    public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
-        holder.bindTo(mArticleList.get(position));
-    }
+  @Override
+  public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
+    holder.bindTo(mArticleList.get(position));
+  }
 
-    @Override
-    public int getItemCount() {
-        return mArticleList != null ? mArticleList.size() : 0;
-    }
+  @Override
+  public int getItemCount() {
+    return mArticleList != null ? mArticleList.size() : 0;
+  }
 
 
-    public void submitList(List<Article> articles) {
-        mArticleList = articles;
-        notifyDataSetChanged();
-    }
+  public void submitList(List<Article> articles) {
+    mArticleList = articles;
+    notifyDataSetChanged();
+  }
 }

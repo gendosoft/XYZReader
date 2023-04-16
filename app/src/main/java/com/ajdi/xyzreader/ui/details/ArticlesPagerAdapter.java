@@ -19,31 +19,31 @@ import timber.log.Timber;
  */
 class ArticlesPagerAdapter extends FragmentStatePagerAdapter {
 
-    private List<Article> mArticleList;
+  private List<Article> mArticleList;
 
-    public ArticlesPagerAdapter(FragmentManager fm) {
-        super(fm);
-    }
+  public ArticlesPagerAdapter(FragmentManager fm) {
+    super(fm);
+  }
 
-    @Override
-    public Fragment getItem(int position) {
-        Article article = mArticleList.get(position);
-        Timber.d("getItem ==> Article ID: %s", article.getId());
-        return ArticleDetailFragment.newInstance(article);
-    }
+  @Override
+  public Fragment getItem(int position) {
+    Article article = mArticleList.get(position);
+    Timber.d("getItem ==> Article ID: %s", article.getId());
+    return ArticleDetailFragment.newInstance(article);
+  }
 
-    @Override
-    public int getCount() {
-        return mArticleList != null ? mArticleList.size() : 0;
-    }
+  @Override
+  public int getCount() {
+    return mArticleList != null ? mArticleList.size() : 0;
+  }
 
-    @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.destroyItem(container, position, object);
-    }
+  @Override
+  public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+    super.destroyItem(container, position, object);
+  }
 
-    public void submitList(List<Article> articles) {
-        mArticleList = articles;
-        notifyDataSetChanged();
-    }
+  public void submitList(List<Article> articles) {
+    mArticleList = articles;
+    notifyDataSetChanged();
+  }
 }

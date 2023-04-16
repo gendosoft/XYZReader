@@ -14,22 +14,22 @@ import java.util.List;
  */
 public class ArticlesViewModel extends ViewModel {
 
-    private LiveData<List<Article>> articlesListLiveData;
-    private int currentPosition;
+  private LiveData<List<Article>> articlesListLiveData;
+  private int currentPosition;
 
-    public ArticlesViewModel(ArticlesRepository articlesRepository) {
-        articlesListLiveData = articlesRepository.getAllArticles();
-    }
+  public ArticlesViewModel(ArticlesRepository articlesRepository) {
+    articlesListLiveData = articlesRepository.getAllArticles();
+  }
 
-    public LiveData<List<Article>> getArticlesListLiveData() {
-        return articlesListLiveData;
-    }
+  public LiveData<List<Article>> getArticlesListLiveData() {
+    return articlesListLiveData;
+  }
 
-    public int getCurrentSelectedPosition() {
-        return currentPosition;
-    }
+  public int getCurrentSelectedPosition() {
+    return currentPosition;
+  }
 
-    public void setCurrentPosition(int position) {
-        currentPosition = position;
-    }
+  public void setCurrentPosition(int position) {
+    currentPosition = position;
+  }
 }

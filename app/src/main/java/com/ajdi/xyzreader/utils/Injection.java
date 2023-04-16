@@ -12,17 +12,17 @@ import com.ajdi.xyzreader.remote.ArticleService;
  */
 public class Injection {
 
-    public static ViewModelFactory provideViewModelFactory(Context context) {
-        ArticlesRepository repository = provideArticlesRepository(context);
-        return ViewModelFactory.getInstance(repository);
-    }
+  public static ViewModelFactory provideViewModelFactory(Context context) {
+    ArticlesRepository repository = provideArticlesRepository(context);
+    return ViewModelFactory.getInstance(repository);
+  }
 
-    public static ArticlesRepository provideArticlesRepository(Context context) {
-        ArticleService apiService = ApiClient.getInstance();
-        AppExecutors executors = AppExecutors.getInstance();
-        return ArticlesRepository.getInstance(
-                apiService,
-                executors
-        );
-    }
+  public static ArticlesRepository provideArticlesRepository(Context context) {
+    ArticleService apiService = ApiClient.getInstance();
+    AppExecutors executors = AppExecutors.getInstance();
+    return ArticlesRepository.getInstance(
+      apiService,
+      executors
+    );
+  }
 }
